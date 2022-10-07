@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SAIM.Domain.Entities.Models
 {
@@ -10,7 +11,7 @@ namespace SAIM.Domain.Entities.Models
         public string Apellidos { get; set; } = null!;
         public DateTime FechaDeNacimiento { get; set; }
         public string ClinicasNit { get; set; } = null!;
-
+        [JsonIgnore]
         public virtual Clinica ClinicasNitNavigation { get; set; } = null!;
     }
 }
