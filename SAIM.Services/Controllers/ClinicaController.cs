@@ -7,6 +7,7 @@ namespace SAIM.Services.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [AllowAnonymous]
 
     public class ClinicaController : ControllerBase
     {
@@ -17,12 +18,29 @@ namespace SAIM.Services.Controllers
             _clinicaApplication = clinicaApplication;
         }
 
-        [AllowAnonymous]
-        [HttpPut]
 
+        [HttpPost]
         public IActionResult AgrgarClinica([FromBody] Clinica clinica)
         {
             return Ok(_clinicaApplication.InsertarClinica(clinica));
+        }
+
+        [HttpGet]
+        public IActionResult ObtenerClinica([FromBody] string Nit)
+        {
+            return Ok(_clinicaApplication.ObtenerClinica(Nit));
+        }
+
+        [HttpPut]
+        public IActionResult ActualizarClinica([FromBody] Clinica clinica)
+        {
+            return Ok(_clinicaApplication.ActualizarClinica(clinica));
+        }
+
+        [HttpDelete]
+        public IActionResult EliminarClinica([FromBody] string Nit)
+        {
+            return Ok(_clinicaApplication.EliminarClinica(Nit));
         }
 
     }

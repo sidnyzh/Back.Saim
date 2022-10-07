@@ -10,7 +10,6 @@ namespace SAIM.Domain.Entities.Models
         public string Apellidos { get; set; } = null!;
         public DateTime FechaDeNacimiento { get; set; }
         public string ClinicasNit { get; set; } = null!;
-
         public virtual Clinica ClinicasNitNavigation { get; set; } = null!;
     }
 }

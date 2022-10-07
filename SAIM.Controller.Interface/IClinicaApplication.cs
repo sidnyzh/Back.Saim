@@ -12,10 +12,9 @@ namespace SAIM.Controller.Interface
     public interface IClinicaApplication
     {
         Response<bool> InsertarClinica(Clinica clinica);
-        Response<Clinica> ObtenerClinica(Clinica clinica);
+        Response<Clinica> ObtenerClinica(string Nit);
         Response<bool> ActualizarClinica(Clinica clinica);
-        Response<bool> EliminarClinica(Clinica clinica);
-
+        Response<bool> EliminarClinica(string Nit);
 
     }
 }

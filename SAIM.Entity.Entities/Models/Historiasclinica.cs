@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SAIM.Domain.Entities.Models
 {
-    public partial class Historiasclinica
+    public partial class HistoriasClinica
     {
         public int Id { get; set; }
         public DateTime FechaHora { get; set; }

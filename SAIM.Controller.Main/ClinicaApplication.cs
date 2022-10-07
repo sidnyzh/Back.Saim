@@ -15,8 +15,6 @@ namespace SAIM.Application.Main
 {
     public class ClinicaApplication : IClinicaApplication
     { 
-
-
         private readonly IRepository<Clinica> _clinca;
 
         public ClinicaApplication(IRepository<Clinica> clinca)
@@ -32,6 +30,7 @@ namespace SAIM.Application.Main
             if (existeClinica)
             {
                 response.IsSuccess = true;
+                _clinca.Update(clinica);
                 response.Message = "Clinica Actualizada exitosamente"; 
             }
             else
@@ -41,17 +40,18 @@ namespace SAIM.Application.Main
             return response;
         }
 
-        public Response<bool> EliminarClinica(Clinica clinica)
+        public Response<bool> EliminarClinica(string Nit)
         {
             var response = new Response<bool>();
-            bool existeClinica = _clinca.GetById(clinica.Nit) != null;
+            bool existeClinica = _clinca.GetById(Nit) != null;
 
             if (!existeClinica)
             {
                 response.IsSuccess = false;
                 response.Message = "La clinica no existe";
             }
-            bool eliminarClinica = _clinca.Delete(clinica.Nit);
+
+            bool eliminarClinica = _clinca.Delete(Nit);
 
             if (eliminarClinica)
             {
@@ -70,11 +70,11 @@ namespace SAIM.Application.Main
             if (existeClinica)
             {
                 response.IsSuccess = false;
-                response.Message = "Ya hay una clínica registrada con este NIT";
+                response.Message = $"Ya hay una clínica registrada con el NIT {clinica.Nit}";
             }
             else
             {
-                var insertar = _clinca.Insert(clinica);
+                _clinca.Insert(clinica);
                 response.IsSuccess = true;
                 response.Message = "La clínica se registró exitosamente";
             }
@@ -83,12 +83,12 @@ namespace SAIM.Application.Main
 
         }
 
-        public Response<Clinica> ObtenerClinica(Clinica clinica)
+        public Response<Clinica> ObtenerClinica(string Nit)
         {
             var response = new Response<Clinica>();
-            bool existeClinica = _clinca.GetById(clinica.Nit) != null;
+            var Clinica = _clinca.GetById(Nit);
 
-            if (!existeClinica)
+            if (Clinica is null)
             {
                 response.IsSuccess = false;
                 response.Message = "La clinica no existe";
@@ -97,7 +97,7 @@ namespace SAIM.Application.Main
             {
                 response.IsSuccess = true;
                 response.Message = "Clinca obtenida exitosamente";
-                response.Data = clinica;
+                response.Data = Clinica;
             
             }
             return response; 
