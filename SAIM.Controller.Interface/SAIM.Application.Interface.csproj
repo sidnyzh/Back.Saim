@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAIM.Application.Response\SAIM.Application.Response.csproj" />
+    <ProjectReference Include="..\SAIM.Entity.Entities\SAIM.Domain.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

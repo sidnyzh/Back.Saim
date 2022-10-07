@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAIM.Controller.Interface\SAIM.Application.Interface.csproj" />
+    <ProjectReference Include="..\SAIM.Domain.Repository\SAIM.Domain.Repository.csproj" />
+    <ProjectReference Include="..\SAIM.Entity.Entities\SAIM.Domain.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
