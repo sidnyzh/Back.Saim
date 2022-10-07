@@ -1,4 +1,4 @@
-﻿using SAIM.Domain.Entities.Models;
+﻿using SAIM.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

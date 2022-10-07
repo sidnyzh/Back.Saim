@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SAIM.Controller.Interface;
-using SAIM.Domain.Entities.Models;
+using SAIM.Domain.Entity
+    ;
 
 namespace SAIM.Services.Controllers
 {

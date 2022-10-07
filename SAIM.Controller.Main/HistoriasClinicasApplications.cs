@@ -1,6 +1,6 @@
 ﻿using SAIM.Application.Interface;
 using SAIM.Application.Response;
-using SAIM.Domain.Entities.Models;
+using SAIM.Domain.Entity;
 using SAIM.Domain.Repository;
 using System;
 using System.Collections.Generic;

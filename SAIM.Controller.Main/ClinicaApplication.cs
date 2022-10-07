@@ -1,13 +1,8 @@
 ﻿using SAIM.Application.Response;
 using SAIM.Controller.Interface;
-using SAIM.Domain.Entities.Models;
+using SAIM.Domain.Entity;
 using SAIM.Domain.Repository;
-using SAIM.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 
 

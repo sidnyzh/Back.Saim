@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SAIM.Application.Interface;
-using SAIM.Controller.Interface;
-using SAIM.Domain.Entities.Models;
+using SAIM.Domain.Entity;
 
 namespace SAIM.Services.Controllers
 {
@@ -19,28 +18,24 @@ namespace SAIM.Services.Controllers
         }
 
         [HttpPut]
-
         public IActionResult AgregarPaciente([FromBody] Paciente paciente)
         {
             return Ok( _pacienteApplication.InsertarPaciente(paciente));
         }
 
-        [HttpPost]
-
+        [HttpDelete]
         public IActionResult EliminarPaciente([FromBody] string cedula)
         {
             return Ok(_pacienteApplication.EliminarPaciente(cedula));
         }
 
         [HttpGet]
-
         public IActionResult obtenerPAciente([FromBody] string cedula)
         {
             return Ok(_pacienteApplication.ObtenerPaciente(cedula));
         }
 
         [HttpPut]
-
         public IActionResult ActualizarPaciente ([FromBody] Paciente paciente)
         {
             return Ok(_pacienteApplication.ActualizarPaciente(paciente));

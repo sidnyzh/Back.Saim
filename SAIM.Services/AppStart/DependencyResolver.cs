@@ -1,7 +1,7 @@
 ﻿using SAIM.Application.Interface;
 using SAIM.Application.Main;
 using SAIM.Controller.Interface;
-using SAIM.Domain.Entities.Models;
+using SAIM.Domain.Entity;
 using SAIM.Domain.Repository;
 
 namespace SAIM.Services.AppStart

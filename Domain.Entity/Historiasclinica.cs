@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SAIM.Domain.Entities.Models
+namespace SAIM.Domain.Entity
 {
     public partial class HistoriasClinica
     {

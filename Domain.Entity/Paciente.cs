@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace SAIM.Domain.Entities.Models
+namespace SAIM.Domain.Entity
 {
     public partial class Paciente
     {

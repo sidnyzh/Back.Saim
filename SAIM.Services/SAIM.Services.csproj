@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
       <PrivateAssets>all</PrivateAssets>
@@ -25,11 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain.Entity\Domain.Entity.csproj" />
     <ProjectReference Include="..\SAIM.Application.Response\SAIM.Application.Response.csproj" />
     <ProjectReference Include="..\SAIM.Controller.Interface\SAIM.Application.Interface.csproj" />
     <ProjectReference Include="..\SAIM.Controller.Main\SAIM.Application.Main.csproj" />
     <ProjectReference Include="..\SAIM.Domain.Repository\SAIM.Domain.Repository.csproj" />
-    <ProjectReference Include="..\SAIM.Entity.Entities\SAIM.Domain.Entities.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

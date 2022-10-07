@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using SAIM.Domain.Entities.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SAIM.Domain.Entity;
 
 namespace SAIM.Services
 {
     public partial class SaimContext : DbContext
     {
-        public SaimContext()
-        {
-        }
         public SaimContext(DbContextOptions<SaimContext> options)
             : base(options)
         {
