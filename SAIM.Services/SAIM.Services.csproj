@@ -28,6 +28,7 @@
     <ProjectReference Include="..\SAIM.Application.Response\SAIM.Application.Response.csproj" />
     <ProjectReference Include="..\SAIM.Controller.Interface\SAIM.Application.Interface.csproj" />
     <ProjectReference Include="..\SAIM.Controller.Main\SAIM.Application.Main.csproj" />
+    <ProjectReference Include="..\SAIM.Domain.Repository\SAIM.Domain.Repository.csproj" />
     <ProjectReference Include="..\SAIM.Entity.Entities\SAIM.Domain.Entities.csproj" />
   </ItemGroup>
 

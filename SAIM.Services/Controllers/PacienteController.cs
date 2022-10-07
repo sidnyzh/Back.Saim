@@ -6,9 +6,10 @@ using SAIM.Domain.Entities.Models;
 
 namespace SAIM.Services.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+    [AllowAnonymous]
     public class PacienteController : ControllerBase
-
-
     {
         private readonly IPacienteApplication _pacienteApplication;
 
@@ -17,7 +18,6 @@ namespace SAIM.Services.Controllers
             _pacienteApplication = pacienteApplication;
         }
 
-        [AllowAnonymous]
         [HttpPut]
 
         public IActionResult AgregarPaciente([FromBody] Paciente paciente)
