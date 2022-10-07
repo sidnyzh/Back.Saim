@@ -5,9 +5,8 @@ using SAIM.Domain.Entity;
 
 namespace SAIM.Services.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    [AllowAnonymous]
     public class PacienteController : ControllerBase
     {
         private readonly IPacienteApplication _pacienteApplication;
@@ -20,17 +19,17 @@ namespace SAIM.Services.Controllers
         [HttpPut]
         public IActionResult AgregarPaciente([FromBody] Paciente paciente)
         {
-            return Ok( _pacienteApplication.InsertarPaciente(paciente));
+            return Ok(_pacienteApplication.InsertarPaciente(paciente));
         }
 
         [HttpDelete]
-        public IActionResult EliminarPaciente([FromBody] string cedula)
+        public IActionResult EliminarPaciente(string cedula)
         {
             return Ok(_pacienteApplication.EliminarPaciente(cedula));
         }
 
         [HttpGet]
-        public IActionResult obtenerPAciente([FromBody] string cedula)
+        public IActionResult obtenerPAciente(string cedula)
         {
             return Ok(_pacienteApplication.ObtenerPaciente(cedula));
         }
@@ -40,8 +39,6 @@ namespace SAIM.Services.Controllers
         {
             return Ok(_pacienteApplication.ActualizarPaciente(paciente));
         }
-
-       
 
     }
 }

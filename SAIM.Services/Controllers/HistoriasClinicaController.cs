@@ -3,13 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using SAIM.Application.Interface;
 using SAIM.Domain.Entity;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SAIM.Services.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    [AllowAnonymous]
     public class HistoriasClinicaController : ControllerBase
     {
         private readonly IHistoriasClinicasApplication _historiasClinicasApplication;
@@ -19,15 +17,14 @@ namespace SAIM.Services.Controllers
             _historiasClinicasApplication = clinicaApplication;
         }
 
-
         [HttpPost]
-        public IActionResult AgrgarClinica([FromBody] HistoriasClinica historiaClinica)
+        public IActionResult AgregarClinica([FromBody] HistoriasClinica historiaClinica)
         {
             return Ok(_historiasClinicasApplication.InsertarHistorialClinico(historiaClinica));
         }
 
         [HttpGet]
-        public IActionResult ObtenerClinica([FromBody] int Id)
+        public IActionResult ObtenerClinica(int Id)
         {
             return Ok(_historiasClinicasApplication.ObtenerHistorialClinico(Id));
         }
@@ -39,7 +36,7 @@ namespace SAIM.Services.Controllers
         }
 
         [HttpDelete]
-        public IActionResult EliminarClinica([FromBody] int Id)
+        public IActionResult EliminarClinica(int Id)
         {
             return Ok(_historiasClinicasApplication.EliminarHistorialClinico(Id));
         }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SAIM.Controller.Interface;
 using SAIM.Domain.Entity
     ;
@@ -8,8 +7,6 @@ namespace SAIM.Services.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [AllowAnonymous]
-
     public class ClinicaController : ControllerBase
     {
         private readonly IClinicaApplication _clinicaApplication;
@@ -19,15 +16,14 @@ namespace SAIM.Services.Controllers
             _clinicaApplication = clinicaApplication;
         }
 
-
         [HttpPost]
-        public IActionResult AgrgarClinica([FromBody] Clinica clinica)
+        public IActionResult AgregarClinica([FromBody] Clinica clinica)
         {
             return Ok(_clinicaApplication.InsertarClinica(clinica));
         }
 
         [HttpGet]
-        public IActionResult ObtenerClinica([FromBody] string Nit)
+        public IActionResult ObtenerClinica(string Nit)
         {
             return Ok(_clinicaApplication.ObtenerClinica(Nit));
         }
@@ -39,7 +35,7 @@ namespace SAIM.Services.Controllers
         }
 
         [HttpDelete]
-        public IActionResult EliminarClinica([FromBody] string Nit)
+        public IActionResult EliminarClinica(string Nit)
         {
             return Ok(_clinicaApplication.EliminarClinica(Nit));
         }

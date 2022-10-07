@@ -2,11 +2,6 @@
 using SAIM.Application.Response;
 using SAIM.Domain.Entity;
 using SAIM.Domain.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SAIM.Application.Main
 {
