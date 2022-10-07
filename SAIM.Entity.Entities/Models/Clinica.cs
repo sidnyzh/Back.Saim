@@ -17,7 +17,6 @@ namespace SAIM.Domain.Entities.Models
         public string Dirección { get; set; } = null!;
         public string Username { get; set; } = null!;
         public string Contraseña { get; set; } = null!;
-
         public virtual ICollection<Paciente> Pacientes { get; set; }
     }
 }

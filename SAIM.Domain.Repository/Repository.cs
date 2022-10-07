@@ -12,14 +12,14 @@ namespace SAIM.Domain.Repository
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
     {
         #region Variables
-        private readonly saimContext _Context;
+        private readonly SaimContext _Context;
         private readonly DbSet<TEntity> _entities;
         #endregion
 
         #region Constructor
-        public Repository(saimContext context)
+        public Repository(SaimContext Context)
         {
-            _Context = context;
+            _Context = Context;
             _entities = _Context.Set<TEntity>();
         }
         #endregion

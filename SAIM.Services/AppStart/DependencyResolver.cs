@@ -11,13 +11,15 @@ namespace SAIM.Services.AppStart
 
         public static IServiceCollection AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
+
            services.AddScoped<IClinicaApplication, ClinicaApplication>();
            services.AddScoped<IRepository<Clinica>, Repository<Clinica>>();
 
             services.AddScoped<IPacienteApplication, PacienteApplication>();
             services.AddScoped<IRepository<Paciente>, Repository<Paciente>>();
 
-
+            services.AddScoped<IHistoriasClinicasApplication, HistoriasClinicasApplications>();
+            services.AddScoped<IRepository<HistoriasClinica>, Repository<HistoriasClinica>>();
 
             return services;
         }

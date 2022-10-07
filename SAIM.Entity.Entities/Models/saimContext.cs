@@ -6,19 +6,18 @@ using SAIM.Domain.Entities.Models;
 
 namespace SAIM.Services
 {
-    public partial class saimContext : DbContext
+    public partial class SaimContext : DbContext
     {
-        public saimContext()
+        public SaimContext()
         {
         }
-
-        public saimContext(DbContextOptions<saimContext> options)
+        public SaimContext(DbContextOptions<SaimContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Clinica> Clinicas { get; set; } = null!;
-        public virtual DbSet<Historiasclinica> Historiasclinicas { get; set; } = null!;
+        public virtual DbSet<HistoriasClinica> Historiasclinicas { get; set; } = null!;
         public virtual DbSet<Paciente> Pacientes { get; set; } = null!;
 
 
@@ -61,7 +60,7 @@ namespace SAIM.Services
                     .HasColumnName("username");
             });
 
-            modelBuilder.Entity<Historiasclinica>(entity =>
+            modelBuilder.Entity<HistoriasClinica>(entity =>
             {
                 entity.HasKey(e => new { e.Id, e.PacientesCedula })
                     .HasName("PRIMARY")
@@ -125,9 +124,9 @@ namespace SAIM.Services
                     .HasConstraintName("fk_Pacientes_Clinicas1");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            //OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
